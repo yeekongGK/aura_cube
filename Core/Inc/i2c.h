@@ -45,6 +45,13 @@ void MX_I2C2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
+HAL_StatusTypeDef I2C1_MemWrite(uint16_t _devAddr, uint16_t _memAddress, uint16_t _memAddSize, uint8_t *_pData, uint16_t _size, uint32_t _timeout);
+HAL_StatusTypeDef I2C1_MemRead(uint16_t _devAddr, uint16_t _memAddress, uint16_t _memAddSize, uint8_t *_pData, uint16_t _size, uint32_t _timeout);
+HAL_StatusTypeDef I2C1_Write(uint16_t _devAddr, uint8_t *_pData, uint16_t _size, uint32_t _timeout);
+HAL_StatusTypeDef I2C1_Read(uint16_t _devAddr, uint8_t *_pData, uint16_t _size, uint32_t _timeout);
+bool I2C1_IsNacked(void);
+HAL_StatusTypeDef I2C1_IsDeviceReady(const uint8_t _devAddr, const uint32_t _trials, const uint16_t _timeout);
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -29,7 +29,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
-#include <stdbool.h>
+
+#include "max17260.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -100,7 +101,15 @@ int main(void)
   MX_USART1_UART_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+  BatteryMonitor_Init();
 
+  for (uint16_t addr = 1; addr < 128; addr++)
+  {
+	  if (HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(addr << 1), 2, 10) == HAL_OK)
+	  {
+		  UART_Printf("Found device at 0x%02X\r\n", addr);
+	  }
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -110,7 +119,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  UART_Printf("1test\r\n");
+	  uint16_t value = BatteryMonitor_GetQH();
+	  UART_Printf("1test %d\r\n",value);
     HAL_Delay(1000);
   }
   /* USER CODE END 3 */

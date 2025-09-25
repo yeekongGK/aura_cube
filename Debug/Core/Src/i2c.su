@@ -2,3 +2,9 @@
 ../Core/Src/i2c.c:74:6:MX_I2C2_Init	8	static
 ../Core/Src/i2c.c:117:6:HAL_I2C_MspInit	152	static
 ../Core/Src/i2c.c:190:6:HAL_I2C_MspDeInit	16	static
+../Core/Src/i2c.c:237:19:I2C1_MemWrite	40	static
+../Core/Src/i2c.c:242:19:I2C1_MemRead	40	static
+../Core/Src/i2c.c:247:19:I2C1_Write	32	static
+../Core/Src/i2c.c:252:19:I2C1_Read	32	static
+../Core/Src/i2c.c:257:6:I2C1_IsNacked	4	static
+../Core/Src/i2c.c:262:19:I2C1_IsDeviceReady	16	static

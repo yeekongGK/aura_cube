@@ -1,8 +1,9 @@
 #include "max17260.h"
 #include "main.h"
+#include "i2c.h"
 
 // I2C Address for the MAX17260
-#define MAX17260_I2C_ADDRESS 0x6C
+#define MAX17260_I2C_ADDRESS 0x36
 
 // A subset of MAX17260 registers needed for init and getQH
 typedef enum {
@@ -131,8 +132,8 @@ static bool i2c_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t* data, uint16_
     // This is a placeholder.
     // Implement this function using your platform's I2C write function.
     // It should handle the START, address, register, data, and STOP conditions.
-    // For example: return HAL_I2C_Mem_Write(&hi2c1, dev_addr << 1, reg_addr, I2C_MEMADD_SIZE_8BIT, data, len, 100) == HAL_OK;
-    return true; // Assume success for now
+     return I2C1_MemWrite(dev_addr << 1, reg_addr, I2C_MEMADD_SIZE_8BIT, data, len, 100) == HAL_OK;
+    //return true; // Assume success for now
 }
 
 /**
@@ -146,8 +147,8 @@ static bool i2c_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t* data, uint16_
 static bool i2c_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t* data, uint16_t len) {
     // This is a placeholder.
     // Implement this function using your platform's I2C read function.
-    // For example: return HAL_I2C_Mem_Read(&hi2c1, dev_addr << 1, reg_addr, I2C_MEMADD_SIZE_8BIT, data, len, 100) == HAL_OK;
-    return true; // Assume success for now
+    return I2C1_MemRead(dev_addr << 1, reg_addr, I2C_MEMADD_SIZE_8BIT, data, len, 100) == HAL_OK;
+    //return true; // Assume success for now
 }
 
 /**

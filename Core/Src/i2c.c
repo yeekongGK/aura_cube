@@ -234,4 +234,35 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 
 /* USER CODE BEGIN 1 */
 
+HAL_StatusTypeDef I2C1_MemWrite(uint16_t _devAddr, uint16_t _memAddress, uint16_t _memAddSize, uint8_t *_pData, uint16_t _size, uint32_t _timeout)
+{
+	return HAL_I2C_Mem_Write(&hi2c1, _devAddr, _memAddress, _memAddSize, (uint8_t *)_pData, _size, _timeout);
+}
+
+HAL_StatusTypeDef I2C1_MemRead(uint16_t _devAddr, uint16_t _memAddress, uint16_t _memAddSize, uint8_t *_pData, uint16_t _size, uint32_t _timeout)
+{
+	return HAL_I2C_Mem_Read(&hi2c1, _devAddr, _memAddress, _memAddSize, _pData, _size, _timeout );
+}
+
+HAL_StatusTypeDef I2C1_Write(uint16_t _devAddr, uint8_t *_pData, uint16_t _size, uint32_t _timeout)
+{
+  return HAL_I2C_Master_Transmit(&hi2c1, _devAddr, _pData, _size, _timeout);
+}
+
+HAL_StatusTypeDef I2C1_Read(uint16_t _devAddr, uint8_t *_pData, uint16_t _size, uint32_t _timeout)
+{
+  return HAL_I2C_Master_Receive(&hi2c1, _devAddr, _pData, _size, _timeout);
+}
+
+bool I2C1_IsNacked( void )
+{
+	return (HAL_I2C_ERROR_AF== hi2c1.ErrorCode)? true: false;
+}
+
+HAL_StatusTypeDef I2C1_IsDeviceReady( const uint8_t _devAddr, const uint32_t _trials, const uint16_t _timeout)
+{
+  return  HAL_I2C_IsDeviceReady(&hi2c1, _devAddr, _trials, _timeout );
+}
+
+
 /* USER CODE END 1 */
