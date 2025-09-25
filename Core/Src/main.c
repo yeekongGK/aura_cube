@@ -121,8 +121,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  UART_Printf("test\r\n");
-	  	HAL_Delay(100);
+	  UART_Printf("sdfs test\r\n");
+    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }

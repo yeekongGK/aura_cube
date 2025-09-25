@@ -1,0 +1,11 @@
+../Core/Src/max17260.c:117:13:i2c_init	1
+../Core/Src/max17260.c:129:13:i2c_write	1
+../Core/Src/max17260.c:145:13:i2c_read	1
+../Core/Src/max17260.c:157:13:delay_ms	3
+../Core/Src/max17260.c:175:13:MAX17260_Register_WriteSingle	1
+../Core/Src/max17260.c:186:13:MAX17260_Register_ReadSingle	2
+../Core/Src/max17260.c:200:13:IsPOR	1
+../Core/Src/max17260.c:210:13:ClearPOR	1
+../Core/Src/max17260.c:223:13:LWInit	2
+../Core/Src/max17260.c:257:6:BatteryMonitor_Init	2
+../Core/Src/max17260.c:269:10:BatteryMonitor_GetQH	1
