@@ -1,4 +1,5 @@
 #include "max17260.h"
+#include "main.h"
 
 // I2C Address for the MAX17260
 #define MAX17260_I2C_ADDRESS 0x6C
