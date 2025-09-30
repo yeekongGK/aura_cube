@@ -29,4 +29,17 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>FuelGauge</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/FuelGauge</location>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>MIU_LIBRARY</name>
+			<value>file:/C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library</value>
+		</variable>
+	</variableList>
 </projectDescription>
