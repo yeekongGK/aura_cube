@@ -5545,33 +5545,33 @@ LOAD C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00024e2d      0x219 ./FuelGauge/max1726x.o
  .debug_macro   0x00025046      0x2a4 ./FuelGauge/max1726x.o
 
-.debug_line     0x00000000    0x17836
+.debug_line     0x00000000    0x1783a
  .debug_line    0x00000000      0x7f6 ./Core/Src/gpio.o
  .debug_line    0x000007f6      0x971 ./Core/Src/i2c.o
  .debug_line    0x00001167      0x82a ./Core/Src/lptim.o
- .debug_line    0x00001991      0xac3 ./Core/Src/main.o
- .debug_line    0x00002454      0x82d ./Core/Src/spi.o
- .debug_line    0x00002c81      0x79e ./Core/Src/stm32l4xx_hal_msp.o
- .debug_line    0x0000341f      0x865 ./Core/Src/stm32l4xx_it.o
- .debug_line    0x00003c84      0x8ac ./Core/Src/syscalls.o
- .debug_line    0x00004530      0x588 ./Core/Src/sysmem.o
- .debug_line    0x00004ab8      0x82f ./Core/Src/system_stm32l4xx.o
- .debug_line    0x000052e7      0x8ac ./Core/Src/usart.o
- .debug_line    0x00005b93       0x7a ./Core/Startup/startup_stm32l443cctx.o
- .debug_line    0x00005c0d      0xb97 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o
- .debug_line    0x000067a4      0xd32 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o
- .debug_line    0x000074d6      0xb97 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o
- .debug_line    0x0000806d     0x3798 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.o
- .debug_line    0x0000b805      0x8f7 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.o
- .debug_line    0x0000c0fc     0x12c5 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_lptim.o
- .debug_line    0x0000d3c1      0x962 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.o
- .debug_line    0x0000dd23      0xc94 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o
- .debug_line    0x0000e9b7     0x113a ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o
- .debug_line    0x0000faf1     0x146a ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o
- .debug_line    0x00010f5b     0x2077 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.o
- .debug_line    0x00012fd2     0x2d68 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
- .debug_line    0x00015d3a      0xd25 ./FuelGauge/max17260.o
- .debug_line    0x00016a5f      0xdd7 ./FuelGauge/max1726x.o
+ .debug_line    0x00001991      0xac7 ./Core/Src/main.o
+ .debug_line    0x00002458      0x82d ./Core/Src/spi.o
+ .debug_line    0x00002c85      0x79e ./Core/Src/stm32l4xx_hal_msp.o
+ .debug_line    0x00003423      0x865 ./Core/Src/stm32l4xx_it.o
+ .debug_line    0x00003c88      0x8ac ./Core/Src/syscalls.o
+ .debug_line    0x00004534      0x588 ./Core/Src/sysmem.o
+ .debug_line    0x00004abc      0x82f ./Core/Src/system_stm32l4xx.o
+ .debug_line    0x000052eb      0x8ac ./Core/Src/usart.o
+ .debug_line    0x00005b97       0x7a ./Core/Startup/startup_stm32l443cctx.o
+ .debug_line    0x00005c11      0xb97 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o
+ .debug_line    0x000067a8      0xd32 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o
+ .debug_line    0x000074da      0xb97 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o
+ .debug_line    0x00008071     0x3798 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.o
+ .debug_line    0x0000b809      0x8f7 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.o
+ .debug_line    0x0000c100     0x12c5 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_lptim.o
+ .debug_line    0x0000d3c5      0x962 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.o
+ .debug_line    0x0000dd27      0xc94 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o
+ .debug_line    0x0000e9bb     0x113a ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o
+ .debug_line    0x0000faf5     0x146a ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o
+ .debug_line    0x00010f5f     0x2077 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.o
+ .debug_line    0x00012fd6     0x2d68 ./Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
+ .debug_line    0x00015d3e      0xd25 ./FuelGauge/max17260.o
+ .debug_line    0x00016a63      0xdd7 ./FuelGauge/max1726x.o
 
 .debug_str      0x00000000    0xd713b
  .debug_str     0x00000000    0xd713b ./Core/Src/gpio.o
