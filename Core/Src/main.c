@@ -18,10 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "crc.h"
 #include "i2c.h"
 #include "lptim.h"
 #include "usart.h"
+#include "rtc.h"
 #include "spi.h"
+#include "wwdg.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -32,6 +35,8 @@
 
 #include "max17260.h"
 #include "max1726x.h"
+
+#include "cfg.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,13 +100,18 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-MX_LPTIM1_Init();
-MX_I2C1_Init();
-MX_I2C2_Init();
-MX_LPUART1_UART_Init();
-MX_USART1_UART_Init();
-MX_SPI1_Init();
+  MX_LPTIM1_Init();
+  MX_I2C1_Init();
+  MX_I2C2_Init();
+  MX_LPUART1_UART_Init();
+  MX_USART1_UART_Init();
+  MX_SPI1_Init();
+  MX_RTC_Init();
+//  MX_WWDG_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
+
+
   BatteryMonitor_Init();
 
   for (uint16_t addr = 1; addr < 128; addr++)
@@ -112,7 +122,8 @@ MX_SPI1_Init();
 	  }
   }
 
-
+//  CFG_ApplyDefaults(&config);
+  UART_Printf("test %d\n\r", config.system.mcuFrequency);
   // if (maxim_max1726x_check_por()) {
   //     UART_Printf("POR detected. Initializing MAX1726x with EZ Config...\r\n");
   //     maxim_max1726x_wait_dnr();                // Wait for the chip to be ready

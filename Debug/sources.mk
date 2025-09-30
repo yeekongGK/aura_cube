@@ -26,4 +26,6 @@ Core/Src \
 Core/Startup \
 Drivers/STM32L4xx_HAL_Driver/Src \
 FuelGauge \
+NB_IoT/LWM2M/cbor/src \
+config \
 

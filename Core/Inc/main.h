@@ -31,6 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+//#include "sys.h"
 #include <stdbool.h>
 /* USER CODE END Includes */
 
@@ -107,8 +108,6 @@ void Error_Handler(void);
 #define NFC_PWR_GPIO_Port GPIOA
 #define NB_ONOFF_Pin GPIO_PIN_15
 #define NB_ONOFF_GPIO_Port GPIOA
-#define RS_TAMPER_Pin GPIO_PIN_3
-#define RS_TAMPER_GPIO_Port GPIOB
 #define PWR_EN_Pin GPIO_PIN_6
 #define PWR_EN_GPIO_Port GPIOB
 #define NB_RESET_Pin GPIO_PIN_3
@@ -117,6 +116,16 @@ void Error_Handler(void);
 #define I2C1_SCL_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
+
+typedef struct
+{
+	uint8_t Tg; /*group tag*/
+	uint8_t t;	/*tag*/
+	uint8_t l;	/*request length*/
+	uint8_t *v;	/*request value*/
+	uint8_t rl; /*response length*/
+	uint8_t *rv;/*response value*/
+}TLV_t;
 
 /* USER CODE END Private defines */
 

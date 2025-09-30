@@ -31,9 +31,54 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>DeviceScr</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Src</location>
+		</link>
+		<link>
 			<name>FuelGauge</name>
 			<type>2</type>
 			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/FuelGauge</location>
+		</link>
+		<link>
+			<name>NB_IoT</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/network/NB_IoT</location>
+		</link>
+		<link>
+			<name>Pulser</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser</location>
+		</link>
+		<link>
+			<name>Src</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/Src</location>
+		</link>
+		<link>
+			<name>config</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config</location>
+		</link>
+		<link>
+			<name>diagnosis</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/diagnosis</location>
+		</link>
+		<link>
+			<name>failsafe</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/failsafe</location>
+		</link>
+		<link>
+			<name>logger</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/logger</location>
+		</link>
+		<link>
+			<name>system</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/system</location>
 		</link>
 	</linkedResources>
 	<variableList>
