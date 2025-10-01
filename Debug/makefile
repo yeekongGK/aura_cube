@@ -9,7 +9,17 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include system/subdir.mk
+-include security/SECURITY_HW/subdir.mk
+-include security/subdir.mk
+-include massage/subdir.mk
+-include ioctrl/subdir.mk
+-include diagnosis/subdir.mk
 -include config/subdir.mk
+-include alarm/subdir.mk
+-include Src/subdir.mk
+-include ST25_NFC/Src/subdir.mk
+-include ST25_NFC/subdir.mk
 -include NB_IoT/LWM2M/cbor/src/subdir.mk
 -include FuelGauge/subdir.mk
 -include Drivers/STM32L4xx_HAL_Driver/Src/subdir.mk

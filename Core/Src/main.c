@@ -2,16 +2,15 @@
 /**
   ******************************************************************************
   * @file           : main.c
-  * @brief          : Main program body
+  * @brief          : Aura V2
   ******************************************************************************
   * @attention
+  * @PIC: CYK
+  * @Created: 25 Sep 2025
+  * @Git link: https://github.com/yeekongGK/aura_cube.git
+  * @TODO
+  * 	*
   *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -36,7 +35,9 @@
 #include "max17260.h"
 #include "max1726x.h"
 
+#include "sys.h"
 #include "cfg.h"
+#include "nfctag.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -107,7 +108,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_SPI1_Init();
   MX_RTC_Init();
-//  MX_WWDG_Init();
+  MX_WWDG_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
 
@@ -147,35 +148,37 @@ int main(void)
 	  // uint16_t value = BatteryMonitor_GetQH();
 	  // UART_Printf("1test %d\r\n",value);
     // HAL_Delay(1000);
-
-    float soc_percentage;
-    float voltage_f;
-    float current_f;
-    
-    uint16_t vcell_raw;
-    int16_t current_raw; // Current can be negative (discharging)
-
-    // Read State of Charge (%) using the library's helper function
-    soc_percentage = maxim_max1726x_get_repsoc();
-
-    // Read raw register values for Voltage and Current
-    maxim_max1726x_read_reg(MAX1726X_VCELL_REG, &vcell_raw);
-    maxim_max1726x_read_reg(MAX1726X_CURRENT_REG, (uint16_t*)&current_raw);
-
-    // Convert raw values to human-readable format
-    // Datasheet: VCell LSB = 78.125 uV
-    voltage_f = vcell_raw * 78.125f / 1000.0f; // Result in mV
-    
-    // Datasheet: Current LSB = 1.5625 uV / Rsense. Assuming Rsense = 10mOhm (0.01 Ohm)
-    // LSB = 1.5625uV / 0.01Ohm = 156.25 uA = 0.15625 mA
-    current_f = current_raw * 0.15625f; // Result in mA
-
-    // Print the results
-    UART_Printf("SOC: %.2f%%, Voltage: %.0f mV, Current: %.2f mA\r\n", 
-            soc_percentage, voltage_f, current_f);
-
-    // Wait for a couple of seconds before the next reading
-    HAL_Delay(2000);
+	  NFCTAG_Task();
+	  //-----------------------------------------------------------------
+//    float soc_percentage;
+//    float voltage_f;
+//    float current_f;
+//
+//    uint16_t vcell_raw;
+//    int16_t current_raw; // Current can be negative (discharging)
+//
+//    // Read State of Charge (%) using the library's helper function
+//    soc_percentage = maxim_max1726x_get_repsoc();
+//
+//    // Read raw register values for Voltage and Current
+//    maxim_max1726x_read_reg(MAX1726X_VCELL_REG, &vcell_raw);
+//    maxim_max1726x_read_reg(MAX1726X_CURRENT_REG, (uint16_t*)&current_raw);
+//
+//    // Convert raw values to human-readable format
+//    // Datasheet: VCell LSB = 78.125 uV
+//    voltage_f = vcell_raw * 78.125f / 1000.0f; // Result in mV
+//
+//    // Datasheet: Current LSB = 1.5625 uV / Rsense. Assuming Rsense = 10mOhm (0.01 Ohm)
+//    // LSB = 1.5625uV / 0.01Ohm = 156.25 uA = 0.15625 mA
+//    current_f = current_raw * 0.15625f; // Result in mA
+//
+//    // Print the results
+//    UART_Printf("SOC: %.2f%%, Voltage: %.0f mV, Current: %.2f mA\r\n",
+//            soc_percentage, voltage_f, current_f);
+//
+//    // Wait for a couple of seconds before the next reading
+//    HAL_Delay(2000);
+    //-----------------------------------------------------------------
 
   }
   /* USER CODE END 3 */
@@ -187,52 +190,51 @@ int main(void)
   */
 void SystemClock_Config(void)
 {
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  LL_FLASH_SetLatency(LL_FLASH_LATENCY_0);
+  while(LL_FLASH_GetLatency()!= LL_FLASH_LATENCY_0)
+  {
+  }
+  LL_PWR_SetRegulVoltageScaling(LL_PWR_REGU_VOLTAGE_SCALE1);
+  while (LL_PWR_IsActiveFlag_VOS() != 0)
+  {
+  }
+  LL_RCC_MSI_Enable();
 
-  /** Configure the main internal regulator output voltage
-  */
-  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+   /* Wait till MSI is ready */
+  while(LL_RCC_MSI_IsReady() != 1)
+  {
+
+  }
+  LL_RCC_MSI_EnableRangeSelection();
+  LL_RCC_MSI_SetRange(LL_RCC_MSIRANGE_6);
+  LL_RCC_MSI_SetCalibTrimming(0);
+  LL_PWR_EnableBkUpAccess();
+  LL_RCC_LSE_SetDriveCapability(LL_RCC_LSEDRIVE_LOW);
+  LL_RCC_LSE_Enable();
+
+   /* Wait till LSE is ready */
+  while(LL_RCC_LSE_IsReady() != 1)
+  {
+
+  }
+  LL_RCC_MSI_EnablePLLMode();
+  LL_RCC_SetSysClkSource(LL_RCC_SYS_CLKSOURCE_MSI);
+
+   /* Wait till System clock is ready */
+  while(LL_RCC_GetSysClkSource() != LL_RCC_SYS_CLKSOURCE_STATUS_MSI)
+  {
+
+  }
+  LL_RCC_SetAHBPrescaler(LL_RCC_SYSCLK_DIV_1);
+  LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_1);
+  LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
+  LL_SetSystemCoreClock(4000000);
+
+   /* Update the time base */
+  if (HAL_InitTick (TICK_INT_PRIORITY) != HAL_OK)
   {
     Error_Handler();
   }
-
-  /** Configure LSE Drive Capability
-  */
-  HAL_PWR_EnableBkUpAccess();
-  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_LOW);
-
-  /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSE|RCC_OSCILLATORTYPE_MSI;
-  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
-  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
-  RCC_OscInitStruct.MSICalibrationValue = 0;
-  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_6;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Enable MSI Auto calibration
-  */
-  HAL_RCCEx_EnableMSIPLLMode();
 }
 
 /* USER CODE BEGIN 4 */

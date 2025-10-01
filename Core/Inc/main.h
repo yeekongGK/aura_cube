@@ -2,17 +2,13 @@
 /**
   ******************************************************************************
   * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * @brief          : Aura V2
   ******************************************************************************
   * @attention
+  * @PIC: CYK
+  * @Created: 25 Sep 2025
+  * @Git link: https://github.com/yeekongGK/aura_cube.git
   *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -29,10 +25,26 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
 
+#include "stm32l4xx_ll_crs.h"
+#include "stm32l4xx_ll_rcc.h"
+#include "stm32l4xx_ll_bus.h"
+#include "stm32l4xx_ll_system.h"
+#include "stm32l4xx_ll_exti.h"
+#include "stm32l4xx_ll_cortex.h"
+#include "stm32l4xx_ll_utils.h"
+#include "stm32l4xx_ll_pwr.h"
+#include "stm32l4xx_ll_dma.h"
+#include "stm32l4xx_ll_gpio.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 //#include "sys.h"
 #include <stdbool.h>
+
+#if defined(STM32L443xx)
+	#include "stm32l4xx_ll_utils.h"
+#endif
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -54,7 +66,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+int main(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

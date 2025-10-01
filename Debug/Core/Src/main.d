@@ -35,6 +35,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_wwdg.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_system.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_exti.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_cortex.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_utils.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_pwr.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h \
  ../Core/Inc/crc.h ../Core/Inc/main.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crc.h ../Core/Inc/i2c.h \
  ../Core/Inc/lptim.h ../Core/Inc/usart.h ../Core/Inc/rtc.h \
@@ -44,11 +54,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/gpio.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/FuelGauge/max17260.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/FuelGauge/max1726x.h \
- C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg.h \
- C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg_addr.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/system/sys.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/system/sysclk.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/system/syspwr.h \
+ C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg.h \
+ C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg_addr.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser/pulser.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser/tracsens.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser/lcsens.h \
@@ -79,7 +89,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Src/sensor.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Src/flowsensor.h \
  C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/Src/alarm_cfg.h \
- C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/diagnosis/diag.h
+ C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/diagnosis/diag.h \
+ C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/ST25_NFC/Src/nfctag.h \
+ C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/ST25_NFC/Src/st25dv_io.h \
+ C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/ST25_NFC/st25dv.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -117,6 +130,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_wwdg.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_system.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_exti.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_cortex.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_utils.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_pwr.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h:
 ../Core/Inc/crc.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crc.h:
@@ -131,11 +154,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/gpio.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/FuelGauge/max17260.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/FuelGauge/max1726x.h:
-C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg.h:
-C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg_addr.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/system/sys.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/system/sysclk.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/system/syspwr.h:
+C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg.h:
+C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/config/cfg_addr.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser/pulser.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser/tracsens.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser/lcsens.h:
@@ -167,3 +190,6 @@ C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/driver
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Src/flowsensor.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/Src/alarm_cfg.h:
 C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/diagnosis/diag.h:
+C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/ST25_NFC/Src/nfctag.h:
+C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/ST25_NFC/Src/st25dv_io.h:
+C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/ST25_NFC/st25dv.h:

@@ -51,9 +51,19 @@
 			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/Pulser</location>
 		</link>
 		<link>
+			<name>ST25_NFC</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/drivers/ST25_NFC</location>
+		</link>
+		<link>
 			<name>Src</name>
 			<type>2</type>
 			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/Src</location>
+		</link>
+		<link>
+			<name>alarm</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/alarm</location>
 		</link>
 		<link>
 			<name>config</name>
@@ -71,9 +81,24 @@
 			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/failsafe</location>
 		</link>
 		<link>
+			<name>ioctrl</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/ioctrl</location>
+		</link>
+		<link>
 			<name>logger</name>
 			<type>2</type>
 			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/logger</location>
+		</link>
+		<link>
+			<name>massage</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/massage</location>
+		</link>
+		<link>
+			<name>security</name>
+			<type>2</type>
+			<location>C:/Users/yee-kong.chong/STM32CubeIDE/workspace_U031/AURA_Temp/miu_library/security</location>
 		</link>
 		<link>
 			<name>system</name>

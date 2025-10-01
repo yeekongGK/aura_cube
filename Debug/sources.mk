@@ -27,5 +27,15 @@ Core/Startup \
 Drivers/STM32L4xx_HAL_Driver/Src \
 FuelGauge \
 NB_IoT/LWM2M/cbor/src \
+ST25_NFC/Src \
+ST25_NFC \
+Src \
+alarm \
 config \
+diagnosis \
+ioctrl \
+massage \
+security/SECURITY_HW \
+security \
+system \
 
